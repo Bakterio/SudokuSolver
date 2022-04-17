@@ -11,6 +11,6 @@ public class ValueDialog {
         final JFrame frame = new JFrame("Change value");
         frame.setAlwaysOnTop(true);
         frame.setVisible(true);
-        frame.setSize(120, 60);
+        frame.setSize(240, 80);
     }
 }
