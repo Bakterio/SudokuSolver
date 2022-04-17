@@ -9,7 +9,7 @@ public class Box extends JButton {
     private static int row = 1;
     private static int column = 1;
     private int size = 50;
-    private int id;
+    public int id;
 
     public Box(int id) {
         this.id = id;
