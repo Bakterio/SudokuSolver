@@ -10,6 +10,7 @@ public class Box extends JButton {
     private static int column = 1;
     private int size = 50;
     public int id;
+    public int value;
 
     public Box(int id) {
         this.id = id;
@@ -24,7 +25,8 @@ public class Box extends JButton {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 Box box = (Box) mouseEvent.getSource();
-                new ValueDialog(box);
+                // new ValueDialog(box);
+                box.setValue(Integer.parseInt(JOptionPane.showInputDialog(null, "New cell value:")));
             }
 
             @Override
@@ -51,6 +53,7 @@ public class Box extends JButton {
     }
 
     public void setValue(int value) {
+        this.value = value;
         this.setText(String.valueOf(value));
     }
 }
