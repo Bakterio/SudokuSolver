@@ -26,7 +26,11 @@ public class Box extends JButton {
             public void mouseClicked(MouseEvent mouseEvent) {
                 Box box = (Box) mouseEvent.getSource();
                 // new ValueDialog(box);
-                box.setValue(Integer.parseInt(JOptionPane.showInputDialog(null, "New cell value:")));
+                try {
+                    box.setValue(Integer.parseInt(JOptionPane.showInputDialog(null, "New cell value:")));
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null,"This is not a number... ;(");
+                }
             }
 
             @Override
