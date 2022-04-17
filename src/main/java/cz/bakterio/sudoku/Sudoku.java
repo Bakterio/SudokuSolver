@@ -12,7 +12,7 @@ public class Sudoku {
         frame.setVisible(true);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                Box box = new Box();
+                Box box = new Box(100 * i + j);
                 box.setValue(j);
                 frame.add(box);
             }

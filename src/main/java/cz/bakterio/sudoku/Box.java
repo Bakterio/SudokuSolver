@@ -9,7 +9,10 @@ public class Box extends JButton {
     private static int row = 1;
     private static int column = 1;
     private int size = 50;
-    public Box() {
+    private int id;
+
+    public Box(int id) {
+        this.id = id;
         if (row == 10) {
             row = 1;
             column++;
@@ -20,11 +23,8 @@ public class Box extends JButton {
         this.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                if (mouseEvent.getButton() == 1) {
-                    mouseEvent.getComponent().setBackground(Color.YELLOW);
-                } else {
-                    mouseEvent.getComponent().setBackground(Color.BLUE);
-                }
+                Box box = (Box) mouseEvent.getSource();
+                new ValueDialog(box);
             }
 
             @Override
